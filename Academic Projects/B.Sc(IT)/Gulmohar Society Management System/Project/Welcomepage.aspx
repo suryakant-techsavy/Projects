@@ -59,7 +59,7 @@
             <h1 class="auto-style1"><strong>Welcome To GulMohar Co-Op Housing Society</strong></h1>
             <h3 class="auto-style4"><strong>Sugandh Jivnacha</strong></h3>
             <br>
-            <a href="Home.aspx" class="btn btn-dark btn-lg">ACCESS THE SITE</a>
+            <a href="Home.aspx" class="btn btn-dark btn-lg">ACCESS THE Website</a>
         </div>
     </header>
 
