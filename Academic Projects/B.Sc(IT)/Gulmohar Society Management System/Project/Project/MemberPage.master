@@ -1,0 +1,283 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MemberPage.master.cs" Inherits="MemberPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+       
+         .style10
+        {
+            text-decoration: underline;
+            color: #00FF00;
+            background-color:black;
+        }
+        .style19
+        {
+            text-align: center;
+            font-size: large;
+            color: #006699;
+        }
+        .style22
+        {
+            font-family: Arial;
+        }
+        .auto-style42 {
+            color: #CC00CC;
+            font-size: x-small;
+        }
+        .auto-style44 {
+            color: #CC0000;
+            font-size: xx-large;
+        }
+        .auto-style47 {
+            font-size: xx-large;
+        }
+        .menu_hover:hover
+			{
+				color:grey;
+				-webkit-transition:color 1s;
+				transition:color 1s;
+			}
+        .auto-style62 {
+            color: #CC0000;
+            text-decoration: underline;
+        }
+        .style23
+        {
+            background-color: #CC6699;
+            color: #000000;
+        }
+        .style24
+        {
+            font-family: Arial;
+            color: #000000;
+        }
+        .auto-style74 {
+            text-decoration: none;
+        }
+        .auto-style75 {
+            color: #FFFFFF;
+
+        }
+        .auto-style76 {
+            text-align: center;
+        }
+        .style10
+        {
+            text-decoration: underline;
+            color: #00FF00;
+            background-color:black;
+        }
+        .style19
+        {
+            text-align: center;
+            font-size: large;
+            color: #006699;
+        }
+        .style22
+        {
+            font-family: Arial;
+        }
+        .menu_hover:hover
+			{
+				color:grey;
+				-webkit-transition:color 1s;
+				transition:color 1s;
+			}
+        .style23
+        {
+            background-color: #CC6699;
+            color: #000000;
+        }
+        .style24
+        {
+            font-family: Arial;
+            color: #000000;
+        }
+        .auto-style74 {
+            text-decoration: none;
+        }
+        .auto-style75 {
+            color: #FFFFFF;
+
+        }
+        .auto-style86 {
+            width: 1314px;
+            height: 39px;
+            background-color: #FFCCCC;
+        }
+        .auto-style96 {
+            width: 100%;
+        }
+        .auto-style98 {
+            height: 57px;
+        }
+        .auto-style99 {
+            color: #FFFFFF;
+            background-color: #000000;
+        }
+        .auto-style103 {
+            color: #FFFFFF;
+        }
+        .auto-style104 {
+            color: #FF9900;
+            background-color:#FFCCCC;
+        }
+        .auto-style106 {
+            width: 160px;
+            float: left;
+            background-color: #009933;
+        }
+        .auto-style112 {
+            width: 156px;
+            float: left;
+            background-color: #009933;
+        }
+        .auto-style113 {
+            width: 155px;
+            float: left;
+            background-color: #009933;
+        }
+        .auto-style114 {
+            width: 158px;
+            float: left;
+            background-color: #009933;
+        }
+        .auto-style115 {
+            width: 159px;
+            float: left;
+            background-color: #009933;
+        }
+        .auto-style116 {
+            color: #FF9900;
+            background-color: #000000;
+            text-align: center;
+        }
+        .auto-style117 {
+            color: #FF9900;
+            background-color: #000000;
+        }
+        .auto-style118 {
+            text-decoration: underline;
+        }
+        .auto-style119 {
+            font-size: xx-large;
+            text-decoration: underline;
+        }
+        .auto-style120 {
+            width: 951px;
+        }
+        </style>
+</head>
+<body style="background-color:cornsilk">     
+          
+       
+
+       <form id="form1" runat="server">
+          
+       
+
+       <asp:Panel ID="Panel1" runat="server" Height="100%" Width="100%" BackColor="black" >
+                 
+        <table ><tr><td></td><td></td><td style="text-align:right" class="auto-style96"><asp:Label ID="Label1" runat="server"   Text="*" CssClass="auto-style99"></asp:Label> 
+            <asp:Button ID="Button1" runat="server" onclick="Buttonqwa_Click" Text="Change Password ???" Width="121px" />
+            <asp:Button ID="Buttonqwa1" runat="server" onclick="Buttonqwa1_Click" Text="Logout" Width="91px" />
+            </td></tr></table>
+              <strong> <asp:Panel ID="Panel3" runat="server" Height="100%" Width="100%" BackColor="Black" >
+                    <strong><center>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img alt="krishna bhagwan" src="images/images%20(2).jpg" class="auto-style98"   />
+                        s<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="Label2" runat="server" CssClass="auto-style75" Text="|| Om Ganpatey Namh: ||"></asp:Label>
+                    </strong>
+            
+            
+                           </center>
+               
+            
+            
+                   <div class="auto-style39" style="font-family: 'arial black'">
+                        <table class="auto-style120" align="center" >
+                            <tr>
+                                <td><asp:Image ID="Image6" runat="server" ImageUrl="~/srddrtfgvdrtfgh/sdfghj/mi.gif" Height="88px" Width="214px" /></td>
+                                <td class="auto-style116">  <span class="auto-style81"></span><span><strong><span class="auto-style123"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em></span><em><span class="auto-style119">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; G</span></em></strong></span><span class="auto-style47"><strong><em><span class="auto-style118">ulMo</span></em></strong></span><span><span class="auto-style119"><strong><em>h</em></strong></span></span><span class="auto-style47"><span class="auto-style118"><strong><em>ar</em></strong> </span> </span><span><span class="auto-style119"><strong><em>S</em></strong></span></span><span class="auto-style47"><strong><em><span class="auto-style124"><span class="auto-style118">ociEty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="auto-style62"> </span></em></strong></span><strong><br />
+                                     <asp:Label ID="Label3" runat="server" CssClass="auto-style42" Font-Bold="False" Font-Names="Arial Black" Font-Size="10pt" ForeColor="#FF9900" Height="17px" Text="Reg.No:-MUM/WP/HSG/CT/11551/01-02/02 " Width="318px"></asp:Label>
+                                    </strong><br class="auto-style44" />
+                                 <strong><em>
+                                 <asp:Label ID="Label4" runat="server" CssClass="auto-style76" Font-Bold="False" Font-Names="Arial Black" ForeColor="#FF9900" Text="Plot No:31/32,Powder Gali,S.V.Road, Goregaon-West,Mumbai-400079 
+" Width="100%"></asp:Label>
+                                 </em></strong></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="auto-style117">&nbsp;
+             </td>
+                            </tr>
+                        </table>
+                           
+                   </div>
+                    
+            
+            
+                           
+               
+            
+            
+                    </center>
+            
+                    
+            
+            
+                           
+               
+            
+            
+        </asp:Panel>
+      
+                                
+           </asp:Panel>
+      
+     	</center>
+		
+
+
+		<div class="auto-style104"  style=" height:100%;width:100%;text-align:center;text-decoration:none;">
+		<center><div style="margin:0px auto;color:white;padding-top:10px;font-family:Arial;font-size:16px;text-align:center;padding-bottom:10px" class="auto-style86">
+		<div style=" padding-top:10px;border:groove" align="center" class="auto-style113"><span class="auto-style75"><a  href="Notice.aspx" style="text-decoration:none" data-analytics-title="Home" "> <span class="menu_hover"  style="cursor:pointer" class="auto-style74"  ><strong><span class="auto-style103">Notice</span></strong></a></div>
+		<div style=" padding-top:10px;border:groove" align="center" class="auto-style114"><strong><a href="ViewProfile1.aspx" style="text-decoration:none" data-analytics-title="Home" "> <span class="menu_hover"  style="cursor:pointer" class="auto-style74"  ><span class="auto-style75">View Profile</span> </a></strong> </span></div>
+		<div style=" padding-top:10px;border:groove" align="center" class="auto-style115"><a  href="ViewBill.aspx" style="text-decoration:none" data-analytics-title="Home" "> <span class="menu_hover"  style="cursor:pointer" class="auto-style74"  ><strong><span class="auto-style75">View Bill </span> </span></strong> </a></div>
+             <div style="color:white;padding-top:10px;border:groove" align="center" class="auto-style113"><a  href="HallBookReq.aspx" style="text-decoration:none" data-analytics-title="Home" "> <span class="menu_hover"  style="cursor:pointer" class="auto-style74"  ><strong><span class="auto-style75">Book Hall</span> </span></strong> </a></div>
+		<div style="color:white;padding-top:10px;border:groove" align="center" class="auto-style114"><a  href="View_Hall_Bill.aspx" style="text-decoration:none" data-analytics-title="Home" "> <span class="menu_hover"  style="cursor:pointer" class="auto-style74"  ><strong><span class="auto-style75">View Hall Bill</span> </span></strong> </a></div>
+		<div style="color:white;padding-top:10px;border:groove" align="center" class="auto-style112"><a  href="Imp_Nomem.aspx" style="text-decoration:none" data-analytics-title="Home" "> <span class="menu_hover"  style="cursor:pointer" class="auto-style74"  ><strong><span class="auto-style75">Imp Numbers</span> </span></strong> </a></div>
+       <div style="color:white;padding-top:10px;border:groove" align="center" class="auto-style115"><a  href="search friend.aspx" style="text-decoration:none" data-analytics-title="Home" "> <span class="menu_hover"  style="cursor:pointer" class="auto-style74"  ><strong><span class="auto-style75">Search Friends</span> </span></strong> </a></div>
+	
+             <div style="color:white;padding-top:10px;border:groove" align="center" class="auto-style106"><a  href="Feedback.aspx" style="text-decoration:none" data-analytics-title="Home" "> <span class="menu_hover"  style="cursor:pointer" class="auto-style74"  ><strong><span class="auto-style75">Queries</span> </span></strong> </a></div>
+		
+       
+		   
+       
+		   
+		</div></center>
+		</div>
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            
+        </asp:ContentPlaceHolder>
+        
+      
+        
+               <asp:Panel ID="Panel2" runat="server" Height="70px" Width="100%"  BackColor="black" >
+      <center>  <strong style="color: white" >!!!&nbsp;&nbsp; 
+          Thanks For Visiting Our Site&nbsp;&nbsp; !!!</strong></center><br class="auto-style75" />
+              <span class="auto-style75">Copyright@SuryakantDubalgunde2016&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Website Designed &amp; Maintained By:Suryakant Dubalgunde,Aakash Suryawanshi </span>
+     
+         
+              </asp:Panel>
+  
+  
+       </form>
+       
+</body>
+</html>

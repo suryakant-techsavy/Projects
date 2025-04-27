@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+
+public partial class _Default : System.Web.UI.Page
+{
+        /// <summary>
+    /// In page load i have to write the code:this code generate 
+    /// dataset.xsd file at specified location.
+    /// after that i have to run this application after runung this 
+    /// application .xsd file created at specified location.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        DataTable dt = Getdata();
+        dt.TableName = "mytable";
+        dt.WriteXmlSchema(@"F:\Softwear\Gokuldhamsociety.com\APP_CODE\DataSet.xsd");
+    }
+    /// <summary>
+    /// Here i have to create method that return datatable with value
+    /// </summary>
+    /// <returns></returns>
+    private DataTable Getdata()
+    {
+        DataTable _dt = new DataTable();
+        _dt.Columns.Add("id");
+        _dt.Columns.Add("Name");
+        _dt.Columns.Add("Age");
+        _dt.Columns.Add("Salary");
+        _dt.Rows.Add("1", "Priti", "22", "544566");
+        _dt.Rows.Add("2", "anu", "21", "7475");
+        _dt.Rows.Add("3", "neha", "24", "4364");
+        _dt.Rows.Add("4", "aman", "21", "4353453");
+        _dt.Rows.Add("5", "rakhi", "34", "34544");
+        _dt.Rows.Add("6", "priyanka", "24", "435435");
+        return _dt;
+    }
+}

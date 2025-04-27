@@ -1,0 +1,92 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\admin\\OneDrive\\Suryakant\\Projects\\TY.BSCIT -Gulmohar Society .Net Project\\Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\OneDrive\\Suryakant\\Projects\\TY.BSCIT -Gulmohar Society .Net Project\\Project\\Welcomepage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Welcomepage.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\OneDrive\\Suryakant\\Projects\\TY.BSCIT -Gulmohar Society .Net Project\\Project\\.vs\\tasks.vs.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.vs\\tasks.vs.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\OneDrive\\Suryakant\\Projects\\TY.BSCIT -Gulmohar Society .Net Project\\Project\\welcomemember.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:welcomemember.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\OneDrive\\Suryakant\\Projects\\TY.BSCIT -Gulmohar Society .Net Project\\Project\\welcomesecretary.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:welcomesecretary.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "tasks.vs.json",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Suryakant\\Projects\\TY.BSCIT -Gulmohar Society .Net Project\\Project\\.vs\\tasks.vs.json",
+              "RelativeDocumentMoniker": ".vs\\tasks.vs.json",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Suryakant\\Projects\\TY.BSCIT -Gulmohar Society .Net Project\\Project\\.vs\\tasks.vs.json",
+              "RelativeToolTip": ".vs\\tasks.vs.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-27T16:06:54.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "welcomemember.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Suryakant\\Projects\\TY.BSCIT -Gulmohar Society .Net Project\\Project\\welcomemember.aspx.cs",
+              "RelativeDocumentMoniker": "welcomemember.aspx.cs",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Suryakant\\Projects\\TY.BSCIT -Gulmohar Society .Net Project\\Project\\welcomemember.aspx.cs",
+              "RelativeToolTip": "welcomemember.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T16:10:27.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "welcomesecretary.aspx",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Suryakant\\Projects\\TY.BSCIT -Gulmohar Society .Net Project\\Project\\welcomesecretary.aspx",
+              "RelativeDocumentMoniker": "welcomesecretary.aspx",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Suryakant\\Projects\\TY.BSCIT -Gulmohar Society .Net Project\\Project\\welcomesecretary.aspx",
+              "RelativeToolTip": "welcomesecretary.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-02-22T16:10:09.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Welcomepage.aspx",
+              "DocumentMoniker": "C:\\Users\\admin\\OneDrive\\Suryakant\\Projects\\TY.BSCIT -Gulmohar Society .Net Project\\Project\\Welcomepage.aspx",
+              "RelativeDocumentMoniker": "Welcomepage.aspx",
+              "ToolTip": "C:\\Users\\admin\\OneDrive\\Suryakant\\Projects\\TY.BSCIT -Gulmohar Society .Net Project\\Project\\Welcomepage.aspx",
+              "RelativeToolTip": "Welcomepage.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-02-22T16:05:32.827Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

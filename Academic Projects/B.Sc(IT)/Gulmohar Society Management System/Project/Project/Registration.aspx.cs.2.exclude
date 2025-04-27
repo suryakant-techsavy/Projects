@@ -1,0 +1,202 @@
+﻿using System;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Drawing;
+
+public partial class _Default : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Page.Header.Title = " Member Registration";
+        Label1.Visible = false;
+        Label2.Visible = false;
+        Label3.Visible = false;
+        Label18.Visible = false;
+        SqlConnection con = new SqlConnection(@"Data Source=HP;Initial Catalog=college;Integrated Security=True");
+        con.Open();
+
+        SqlCommand cmd = new SqlCommand("SELECT max(MemberId) FROM Member_Info", con);
+        SqlDataReader dr = cmd.ExecuteReader();
+
+        if (dr.Read())
+        {
+            TextBox10.Text = (Convert.ToUInt64(dr[0].ToString()) + 1).ToString();
+        }
+        else
+        {
+            TextBox10.Text = "1";
+        }
+        dr.Close();
+        con.Close();
+
+    }
+    protected void TextBox1_TextChanged(object sender, EventArgs e)
+    {
+        //SqlConnection con = new SqlConnection(@"Data Source=HP;Initial Catalog=college;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=HP;Initial Catalog=college;Integrated Security=True");
+
+        con.Open();
+        SqlCommand cmd = new SqlCommand("select*from Member_Info where username='" + TextBox1.Text + "'", con);
+        SqlDataReader dr = cmd.ExecuteReader();
+
+        if (dr.Read())
+        {
+
+            Label1.Visible = true;
+            Label1.Text = "User Name is Already Exist in the database,Try Another";
+            this.Label1.ForeColor = Color.OrangeRed;
+        }
+        else
+        {
+
+            Label1.Visible = true;
+
+            Label1.Text = "UserName is Available to you,you can try this";
+            this.Label1.ForeColor = Color.Green;
+        }
+        con.Close();
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        string pen = CheckBox1.Checked ? "yes,I will pay 5000/-" : "No,i won't";
+
+        string x1 = "-";
+
+
+        if (TextBox3.Text != "")
+        {
+            x1 = TextBox9.Text;
+        }
+
+        //you can use disconnected architecture also,here i have used connected architecture.
+        SqlConnection con = new SqlConnection(@"Data Source=HP;Initial Catalog=college;Integrated Security=True");
+        con.Open();
+
+        SqlCommand com = new SqlCommand("select count(*)from Member_Info where email='" + TextBox5.Text + "' or username='" + TextBox1.Text + "'or Flat_No='" + DropDownList2.Text + "'", con);
+        int count = Convert.ToInt32(com.ExecuteScalar());
+
+        if (count > 0)
+        {
+            Response.Write("<script type=text/javascript>alert('You Have Entered That value which is already exists in database,Please Check Details');</script>");
+
+        }
+        else
+        {
+
+            captcha1.ValidateCaptcha(TextBox6.Text.Trim());
+            if (captcha1.UserValidated)
+            {
+
+
+
+                byte[] image_Byte = new byte[FileUpload1.PostedFile.InputStream.Length + 1];
+                FileUpload1.PostedFile.InputStream.Read(image_Byte, 0, image_Byte.Length);
+                //Check whether image size 51200 byte or 50 kb 
+                long size_img = FileUpload1.PostedFile.InputStream.Length;
+                if (size_img <= 51200)
+                {
+
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Member_Info (MemberId,Flat_No,Resident,Name,contact_1,contact_2,email,username,password,security_que,ans,Photo,pen) VALUES(@MemberId,@Flat_No,@Resident,@Name,@contact_1,@contact_2,@email,@username,@password,@security_que,@ans,@Photo,@pen)", con);
+
+
+                    cmd.Parameters.AddWithValue("@MemberId", TextBox10.Text);
+                    cmd.Parameters.AddWithValue("@Flat_No", DropDownList2.Text);
+                    if (RadioButtonList1.SelectedValue == "Owner" || RadioButtonList1.SelectedValue == "Tenant/Pay n Guest")
+                    {
+                        cmd.Parameters.AddWithValue("@Resident", RadioButtonList1.Text);
+                    }
+
+
+
+                    cmd.Parameters.AddWithValue("@Name", TextBox7.Text);
+                    cmd.Parameters.AddWithValue("@contact_1", TextBox8.Text);
+                    cmd.Parameters.AddWithValue("@contact_2", x1);
+                    cmd.Parameters.AddWithValue("@email", TextBox5.Text);
+                    cmd.Parameters.AddWithValue("@username", TextBox1.Text);
+
+                    cmd.Parameters.AddWithValue("@pen", pen);
+                    cmd.Parameters.AddWithValue("@password", TextBox2.Text);
+                    cmd.Parameters.AddWithValue("@security_que", DropDownList1.Text);
+                    cmd.Parameters.AddWithValue("@ans", TextBox13.Text);
+                    cmd.Parameters.AddWithValue("@Photo", image_Byte);
+
+                    int rows = cmd.ExecuteNonQuery();
+                    Session["name"] = TextBox7.Text;
+                    Response.Redirect("default.aspx");
+                }
+                else
+                {
+                    Response.Write("<script type=text/javascript>alert('Invalid Captcha Image ,Please Check Details');</script>");
+
+
+                }
+
+            }
+        }
+    }
+
+
+
+
+
+
+    protected void TextBox5_TextChanged(object sender, EventArgs e)
+    {
+        SqlConnection con = new SqlConnection(@"Data Source=HP;Initial Catalog=college;Integrated Security=True");
+        con.Open();
+        SqlCommand cmd = new SqlCommand("select*from Member_Info where email='" + TextBox5.Text + "'", con);
+        SqlDataReader dr = cmd.ExecuteReader();
+
+        if (dr.Read())
+        {
+            Label3.Visible = true;
+
+            Label3.Text = "Email is Already Exist in the database,Try Another";
+            this.Label3.ForeColor = Color.OrangeRed;
+        }
+        else
+        {
+            Label3.Visible = true;
+
+            Label3.Text = "Email is Available to you,you can try this";
+            this.Label3.ForeColor = Color.Green;
+        }
+        con.Close();
+
+    }
+    protected void TextBox10_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        SqlConnection con = new SqlConnection(@"Data Source=HP;Initial Catalog=college;Integrated Security=True");
+        con.Open();
+        SqlCommand cmd = new SqlCommand("select*from Member_Info where Flat_No='" + DropDownList2.Text + "'", con);
+        SqlDataReader dr = cmd.ExecuteReader();
+
+        if (dr.Read())
+        {
+            Label18.Visible = true;
+
+            Label18.Text = "Flat No is Already Exist in the database,select appropriate one";
+            this.Label18.ForeColor = Color.OrangeRed;
+        }
+        else
+        {
+            Label18.Visible = true;
+
+            Label18.Text = "Flat No is Available to you,you can try this";
+            this.Label18.ForeColor = Color.Green;
+        }
+        con.Close();
+
+    }
+
+    protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+}

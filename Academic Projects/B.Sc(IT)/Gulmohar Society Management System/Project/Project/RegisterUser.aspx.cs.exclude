@@ -1,0 +1,97 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Configuration;
+using System.Data.SqlClient;
+
+public partial class RegisterUser : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    protected void RegisterUser1(object sender, EventArgs e)
+    {
+      
+    }
+   
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("RegisterUser.aspx");
+    }
+
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+        string Terms = CheckBox1.Checked ? "yes,I will pay 5000/-" : "No,i won't";
+
+        string x1 = "-";
+
+
+        if (TextBox3.Text != "")
+
+        {
+            x1 = TextBox3.Text;
+        }
+
+        int userId = 0;
+
+        string constr = ConfigurationManager.ConnectionStrings["GulMoharConnectionString"].ConnectionString;
+        using (SqlConnection con = new SqlConnection(constr))
+        {
+
+            using (SqlCommand cmd = new SqlCommand("Insert_User"))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Username", txtUsername.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Password", txtPassword.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                    cmd.Parameters.AddWithValue("@FullName", TextBox1.Text);
+                    cmd.Parameters.AddWithValue("@FlatNo", DropDownList2.Text);
+                    cmd.Parameters.AddWithValue("@Resident", RadioButtonList1.Text);
+
+                    cmd.Parameters.AddWithValue("@ContactNo1", TextBox5.Text);
+                    cmd.Parameters.AddWithValue("@ContactNo2", x1);
+                    cmd.Parameters.AddWithValue("@Terms", Terms);
+                    cmd.Parameters.AddWithValue("@Sec", DropDownList1.Text);
+                    cmd.Parameters.AddWithValue("@Ans", TextBox13.Text);
+
+
+                    cmd.Connection = con;
+                    con.Open();
+                    userId = Convert.ToInt32(cmd.ExecuteScalar());
+                    Session["FullName"] = TextBox1.Text;
+                    con.Close();
+                }
+            }
+            string message = string.Empty;
+            switch (userId)
+            {
+                case -1:
+                    message = DropDownList2.Text + "FlatNo Already Exists.\\nPlease choose a different FlatNo";
+                    break;
+
+                case -2:
+                    message = txtEmail.Text + "Supplied email address has already been used.";
+                    break;
+                case -3:
+                    message = txtUsername.Text + "Username already exists.\\nPlease choose a different username.";
+                    break;
+                default:
+                    message = "Registration successful.\\nUser Id: " + userId.ToString();
+                    break;
+            }
+            ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "');", true);
+        }
+        txtUsername.Text = "";
+        txtEmail.Text = "";
+        txtPassword.Text = "";
+
+    }
+}

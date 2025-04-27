@@ -1,0 +1,339 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+using System.Data.SqlClient;
+public partial class MemberRegistration : System.Web.UI.Page
+{
+    SqlConnection conn;
+    SqlCommand cmd;
+    SqlDataReader dr;
+    public string message1;
+    public string message;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //Label13.Visible = false;
+        
+       
+        Page.Header.Title = " Member Registration";
+
+        conn = new SqlConnection(ConfigurationManager.ConnectionStrings["collegeConnectionString3"].ConnectionString);
+        conn.Open();
+
+        cmd = new SqlCommand("SELECT max(MemberId) FROM Member_Info", conn);
+        dr = cmd.ExecuteReader();
+
+        if (dr.Read())
+        {
+            TextBox10.Text = (Convert.ToString(dr[0].ToString())+1).ToString();
+        }
+        else
+        {
+            TextBox10.Text = "1";
+        }
+        dr.Close();
+        conn.Close();
+
+
+    }
+    protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        
+        conn = new SqlConnection(ConfigurationManager.ConnectionStrings["collegeConnectionString3"].ConnectionString);
+        conn.Open();
+        cmd = new SqlCommand("select * from Member_Info where Flat_No = '" + DropDownList2.Text + "'", conn);
+
+        SqlDataReader dr = cmd.ExecuteReader();
+
+
+
+        if (dr.Read())
+
+        {
+
+            Label19.Text = "Flat_No Already Exist in the Database,Try another";
+
+            this.Label19.ForeColor = System.Drawing.Color.Red;
+
+        }
+
+        else
+
+        {
+
+            Label19.Text = "Flat is Available";
+
+            this.Label19.ForeColor = System.Drawing.Color.LightGreen;
+
+        }
+        dr.Close();
+        conn.Close();
+
+    }
+    protected void TextBox6_TextChanged(object sender, EventArgs e)
+    {
+       
+        
+            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["collegeConnectionString3"].ConnectionString);
+            conn.Open();
+            cmd = new SqlCommand("select * from Member_Info where email = '" + TextBox6.Text + "'", conn);
+
+            SqlDataReader dr1 = cmd.ExecuteReader();
+
+
+
+            if (dr1.Read())
+
+            {
+
+                Label19.Text = "Email Already Exist in the Database,Try another";
+
+                this.Label19.ForeColor = System.Drawing.Color.Red;
+
+            }
+
+            else
+
+            {
+
+                Label19.Text = "Email is Available";
+
+                this.Label19.ForeColor = System.Drawing.Color.LightGreen;
+
+            }
+            dr1.Close();
+            conn.Close();
+        
+    }
+
+
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+
+        //string x1 = "-";
+
+
+        //if (TextBox3.Text != "")
+
+        //{
+        //    x1 = TextBox3.Text;
+        //}
+
+        //if (TextBox7.Text == TextBox8.Text)
+        //{
+
+        //    string MemberId = TextBox10.Text;
+        //    string Flat_No = DropDownList2.Text;
+        //    string Resident = RadioButtonList1.Text;
+        //    string Name = TextBox1.Text;
+        //    string Address = TextBox2.Text;
+        //    string City = TextBox4.Text;
+        //    string Pin_Code = TextBox11.Text;
+        //    string Two_Wheeler = TextBox9.Text;
+        //    string Four_Wheeler = TextBox12.Text;
+        //    string contact_1 = TextBox5.Text;
+        //    string contact_2 = TextBox3.Text;
+        //    string email = TextBox6.Text;
+        //    string password = TextBox7.Text;
+        //    string security_que = DropDownList1.Text;
+        //    string ans = TextBox13.Text;
+        //    string pen = CheckBox1.Checked ? "yes,I will pay 5000/-" : "No,i won't";
+        //    byte[] image_Byte = new byte[FileUpload1.PostedFile.InputStream.Length + 1];
+        //    FileUpload1.PostedFile.InputStream.Read(image_Byte, 0, image_Byte.Length);
+        //    //Check whether image size 51200 byte or 50 kb 
+        //    long size_img = FileUpload1.PostedFile.InputStream.Length;
+        //    if (size_img <= 51200)
+        //    {
+
+        //        //    cmd = new SqlCommand("INSERT INTO Member_Info (MemberId,Flat_No,Resident,Name,Address,City,Pin_Code,Two_Wheeler,Four_Wheeler,contact_1,contact_2,email,password,security_que,ans,Photo,pen) VALUES(@MemberId,@Flat_No,@Resident,@Name,@Address,@City,@Pin_Code,@Two_Wheeler,@Four_Wheeler,@contact_1,@contact_2,@email,@password,@security_que,@ans,@Photo,@pen)", conn);
+
+
+        //        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["CollegeConnectionString"].ConnectionString);
+        //        con.Open();
+        //        SqlCommand cmd = new SqlCommand("dbo.sp_userinformation", con);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.Parameters.AddWithValue("@MemberId", MemberId);
+        //        cmd.Parameters.AddWithValue("@Flat_No", Flat_No);
+        //        if (RadioButtonList1.SelectedValue == "Owner" || RadioButtonList1.SelectedValue == "Tenant/Pay n Guest")
+        //        {
+        //            cmd.Parameters.AddWithValue("@Resident", Resident);
+        //        }
+        //        cmd.Parameters.AddWithValue("@Name", Name);
+        //        cmd.Parameters.AddWithValue("@Address", Address);
+        //        cmd.Parameters.AddWithValue("@City", City);
+        //        cmd.Parameters.AddWithValue("@Pin_Code", Pin_Code);
+        //        cmd.Parameters.AddWithValue("@Two_Wheeler", Two_Wheeler);
+        //        cmd.Parameters.AddWithValue("@Four_Wheeler", Four_Wheeler);
+        //        cmd.Parameters.AddWithValue("@contact_1", contact_1);
+        //        cmd.Parameters.AddWithValue("@contact_2", x1);
+        //        cmd.Parameters.AddWithValue("@email", email);
+        //        cmd.Parameters.AddWithValue("@pen", pen);
+        //        cmd.Parameters.AddWithValue("@password", password);
+        //        cmd.Parameters.AddWithValue("@security_que", security_que);
+        //        cmd.Parameters.AddWithValue("@ans", ans);
+        //        cmd.Parameters.AddWithValue("@Photo", image_Byte);
+        //        cmd.Parameters.Add("@ERROR", SqlDbType.Char, 500);
+        //        cmd.Parameters["@ERROR"].Direction = ParameterDirection.Output;
+        //        message = (string)cmd.Parameters["@ERROR"].Value;
+        //        cmd.Parameters.Add("@ERROR1", SqlDbType.Char, 500);
+        //        cmd.Parameters["@ERROR1"].Direction = ParameterDirection.Output;
+        //         message1 = (string)cmd.Parameters["@ERROR1"].Value;
+        //        cmd.ExecuteNonQuery();
+
+
+
+
+
+
+
+        //        con.Close();
+        //    }
+
+        //else
+        //{
+        //    Response.Write("<Script language='javascript'>alert('" + "Unsuccessful ,Try again" + "');</script>");
+        //    Label13.Text = message;
+        //    Label18.Text = message1;
+
+        //}
+
+
+
+
+
+        string pen = CheckBox1.Checked ? "yes,I will pay 5000/-" : "No,i won't";
+
+        string x1 = "-";
+
+
+        if (TextBox3.Text != "")
+
+        {
+            x1 = TextBox3.Text;
+        }
+
+
+        conn = new SqlConnection(ConfigurationManager.ConnectionStrings["collegeConnectionString3"].ConnectionString);
+        conn.Open();
+
+        byte[] image_Byte;
+
+            image_Byte = new byte[FileUpload1.PostedFile.InputStream.Length + 1];
+            FileUpload1.PostedFile.InputStream.Read(image_Byte, 0, image_Byte.Length);
+            //Check whether image size 51200 byte or 50 kb 
+            long size_img = FileUpload1.PostedFile.InputStream.Length;
+            if (size_img <= 51200)
+            {
+
+                cmd = new SqlCommand("INSERT INTO Member_Info (MemberId,Flat_No,Resident,Name,Address,contact_1,contact_2,email,username,password,security_que,ans,Photo,pen) VALUES(@MemberId,@Flat_No,@Resident,@Name,@contact_1,@contact_2,@email,@username,@password,@security_que,@ans,@Photo,@pen)", conn);
+
+
+                cmd.Parameters.AddWithValue("@MemberId", TextBox10.Text);
+                cmd.Parameters.AddWithValue("@Flat_No", DropDownList2.Text);
+                if (RadioButtonList1.SelectedValue == "Owner" || RadioButtonList1.SelectedValue == "Tenant/Pay n Guest")
+                {
+                    cmd.Parameters.AddWithValue("@Resident", RadioButtonList1.Text);
+                }
+
+
+
+                cmd.Parameters.AddWithValue("@Name", TextBox1.Text);
+                cmd.Parameters.AddWithValue("@contact_1", TextBox5.Text);
+                cmd.Parameters.AddWithValue("@contact_2", x1);
+                cmd.Parameters.AddWithValue("@email", TextBox6.Text);
+            cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+
+            cmd.Parameters.AddWithValue("@pen", pen);
+                cmd.Parameters.AddWithValue("@password", TextBox7.Text);
+                cmd.Parameters.AddWithValue("@security_que", DropDownList1.Text);
+                cmd.Parameters.AddWithValue("@ans", TextBox13.Text);
+                cmd.Parameters.AddWithValue("@Photo", image_Byte);
+
+                int rows = cmd.ExecuteNonQuery();
+                Session["name"] = TextBox1.Text;
+               
+                Response.Write("<script type=text/javascript>alert('Successfully Registered,Welcome To  Our Society');</script>");
+            }
+
+
+            else
+            {
+
+                Response.Write("<script type=text/javascript>alert('Unsuccessfull Registering,Check Entered Details');</script>");
+
+
+            }
+
+
+
+            dr.Close();
+        
+        conn.Close();
+
+
+
+        TextBox1.Text = "";
+            TextBox3.Text = "";
+       
+        TextBox5.Text = "";
+        TextBox6.Text = "";
+        TextBox7.Text = "";
+        TextBox8.Text = "";
+      TextBox10.Text = "";
+        txtUsername.Text = "";
+        TextBox13.Text = "";
+        CheckBox1.Text = "";
+        DropDownList1.Text = "";
+        //DropDownList2.Text = "";
+
+
+
+    }
+
+    
+
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MemberRegistration.aspx");
+        }
+
+
+
+
+
+    protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void TextBox10_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+    {
+      
+      
+
+      
+    }
+
+
+
+ 
+}
+
+
+ 

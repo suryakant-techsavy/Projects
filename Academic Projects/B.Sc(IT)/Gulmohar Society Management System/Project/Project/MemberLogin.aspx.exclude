@@ -1,0 +1,126 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Welcome.master" AutoEventWireup="true" CodeFile="MemberLogin.aspx.cs" Inherits="MemberLogin" EnableEventValidation="true" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+  
+    <style type="text/css">
+        .auto-style1 {
+            width: 621px;
+            height: 203px;
+        }
+        .auto-style3 {
+            width: 53px;
+        }
+        .auto-style42 {
+            background-color: #FF6600;
+        }
+        .auto-style36 {
+            width: 53px;
+            font-family: Arial;
+            color: #CC9900;
+            height: 53px;
+        }
+        .auto-style37 {
+            text-align: right;
+            font-size: large;
+            font-family: Arial;
+            color: #CC0000;
+            height: 53px;
+        }
+        .style25
+        {
+            width: 72px;
+        }
+        .style26
+        {
+            width: 72px;
+            font-family: Arial;
+            color: #CC9900;
+            height: 53px;
+        }
+        </style>
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <body><br />
+    <form runat="server">
+ 
+    
+   <center> <asp:Panel ID="Panel1" runat="server" BackColor="Lavender"  Height="350px" Width="100%"> <div class="auto-style89">
+           <strong>
+           <asp:Label ID="Label10" runat="server" BackColor="#9900CC" CssClass="auto-style7" ForeColor="Wheat" Height="54px" style="background-color: #FF0000; font-size: large;" Text="Member Login Page" Width="748px"></asp:Label>
+           <br />
+           <br />
+           <asp:Label ID="Label11" runat="server" Text="Label"></asp:Label>
+           </strong>
+       </div>
+   
+           
+     
+    <asp:Image ID="Image1" runat="server" 
+        AlternateText="Use UserName &amp; Password To Unlock The Web-Application" 
+        BackColor="#FF99FF" BorderColor="#FFFFCC" BorderWidth="0px" 
+        ForeColor="#FFFFCC" Height="232px" ImageAlign="Left" 
+        ImageUrl="~/images/images (4).jpg" Width="385px" />
+                     
+
+
+
+<table cellspacing="0" cellpadding="0" class="auto-style1" align="left">
+        
+        <tr>
+            <td align="left" class="style25"> 
+                <br />
+                <asp:Label ID="Label2" runat="server" Text="Username:" Font-Bold="True" 
+                    Font-Names="Arial Black" Font-Size="15pt" ForeColor="#990099" /> </td>
+            <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <asp:TextBox ID="TextBox1" runat="server"  AutoCompleteType="Email" 
+                    BackColor="White" Height="38px" OnTextChanged="TextBox1_TextChanged" 
+                    Width="220px" /> </td>
+        </tr>
+    
+        <tr>
+            <td align="left" class="style25"> 
+                <br />
+                <asp:Label ID="Label3" runat="server" Text="Password:" Font-Bold="True" 
+                    Font-Names="Arial Black" Font-Size="15pt" ForeColor="#990099" /> </td>
+            <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <asp:TextBox ID="TextBox2" runat="server" TextMode="Password" BackColor="White" 
+                    Height="38px" Width="220px"  /> </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2" align="center">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Button1" runat="server" Text="Login" Width="100px" 
+                    onclick="Button1_Click" BackColor="#99FFCC" Font-Bold="True" 
+                    Font-Names="Arial Black" Font-Size="15pt" ForeColor="Lime" Height="42px" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                <asp:Button ID="Button3" runat="server" BackColor="#99FF99" Font-Bold="True" 
+                    Font-Names="Arial Black" Font-Size="15pt" ForeColor="#FF6600" Height="42px" 
+                    OnClick="Button3_Click1" Text="Reset" Width="100px" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 
+            </td>
+        </tr>
+    
+        <tr>
+            <td class="style26">
+                &nbsp;</td>
+            <td>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/MemberForgotpwd.aspx" Font-Bold="True" ForeColor="Red">Forgot Password???</asp:HyperLink>
+            </td>
+        </tr>
+    </table>
+</asp:Panel>
+       </center>
+        </form>
+        </body>
+
+
+
+
+
+
+</asp:Content>
+
