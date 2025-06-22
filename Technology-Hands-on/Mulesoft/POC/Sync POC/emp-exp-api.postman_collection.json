@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "08b1848f-7ae2-4885-ab34-02d3919ecd49",
+		"name": "emp-exp-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25262806"
+	},
+	"item": [
+		{
+			"name": "https://employee-exp-cloudhub2-api-ofpgit.5sc6y6-3.usa-e2.cloudhub.io/api/employee",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "3d351f1ba37046238c18be6dcff91d98",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "9e62cF1c3B01441d843A075733710992",
+						"type": "text"
+					},
+					{
+						"key": "request_tracking_id",
+						"value": "test",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://wm-exp-cloudhub2-api-ofpgit.5sc6y6-3.usa-e2.cloudhub.io/api/employee",
+					"protocol": "https",
+					"host": [
+						"wm-exp-cloudhub2-api-ofpgit",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://wm-sys-cloudhub2-api-ofpgit.5sc6y6-3.usa-e2.cloudhub.io/api/employeesys",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "client_id",
+						"value": "123",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "client_secret",
+						"value": "123",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-api-key",
+						"value": "reqres-free-v1",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wm-sys-cloudhub2-api-ofpgit.5sc6y6-3.usa-e2.cloudhub.io/api/employeesys",
+					"protocol": "https",
+					"host": [
+						"wm-sys-cloudhub2-api-ofpgit",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"employeesys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://wm-prc-employee-cloudhub2-api-ofpgit.5sc6y6-2.usa-e2.cloudhub.io/api/employeeprc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wm-prc-cloudhub2-api-ofpgit.5sc6y6-3.usa-e2.cloudhub.io/api/employeeprc",
+					"protocol": "https",
+					"host": [
+						"wm-prc-cloudhub2-api-ofpgit",
+						"5sc6y6-3",
+						"usa-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"employeeprc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://dummy.restapiexample.com:443/api/v1/employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummy.restapiexample.com:443/api/v1/employees",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://reqres.in/api/users?page=1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "reqres-free-v1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=1",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
