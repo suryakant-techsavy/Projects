@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suryakant & Aishwarya Wedding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --maroon: #800000; --gold: #FFD700; --cream: #FFF8E7; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--cream); color: #4A0000; margin: 0; text-align: center; overflow-x: hidden; }
+        
+        /* Welcome Overlay */
+        #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--maroon); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 0.8s; }
+        .enter-btn { background: transparent; color: var(--gold); border: 2px solid var(--gold); padding: 12px 35px; font-family: 'Cinzel', serif; cursor: pointer; letter-spacing: 2px; border-radius: 50px; margin-top: 20px; }
+ 
+        /* Header */
+        .hero { background: linear-gradient(rgba(128, 0, 0, 0.85), rgba(128, 0, 0, 0.85)), url('https://www.transparenttextures.com/patterns/paper-fibers.png'), #800000; color: var(--gold); padding: 60px 20px; border-bottom: 5px double var(--gold); }
+        h1 { font-family: 'Great Vibes', cursive; font-size: 3.5rem; margin: 10px 0; }
+        
+        /* Cards & Content */
+        .card { background: white; margin: -30px auto 30px; width: 90%; max-width: 500px; padding: 25px; border-radius: 10px; border: 1px solid var(--gold); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        #countdown-container { display: flex; justify-content: center; gap: 8px; margin: 20px 0; }
+         #countdown { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
+        .time-box { background: var(--maroon); color: var(--gold); padding: 10px; border-radius: 5px; min-width: 55px; }
+        .time-box span { display: block; font-size: 1.2rem; font-weight: bold; }
+        .label { font-size: 0.6rem; text-transform: uppercase; }
+ 
+        /* Schedule Timeline */
+        .event { border-left: 3px solid var(--gold); text-align: left; padding-left: 15px; margin-bottom: 20px; }
+        .event h4 { color: var(--maroon); margin: 0; }
+ 
+        /* Gallery */
+        .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px; }
+        .gallery img { width: 100%; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+ 
+        .btn { background: var(--maroon); color: var(--gold); padding: 15px; text-decoration: none; display: block; border-radius: 5px; font-weight: bold; margin-top: 20px; border: 1px solid var(--gold); }
+        iframe { width: 100%; max-width: 500px; height: 250px; border-radius: 15px; border: 2px solid var(--gold); margin-top: 20px; }
+        #location iframe {
+            width: 80%;
+            height: 450px;
+            border: 5px solid #d4af37;
+            border-radius: 10px;
+        }
+        .gold-divider { width: 100px; height: 2px; background: var(--gold); margin: 20px auto; }
+       .section { padding: 50px 20px; }
+       .upload-section {
+            border: 1px dashed var(--maroon);
+            padding: 20px;
+            margin-top: 30px;
+            background-color: white;
+        }
+ 
+    </style>
+</head>
+<body>
+ 
+    <div id="overlay">
+        <div style="letter-spacing: 2px;color: var(--gold);  font-size: 2.5rem; margin-top: 10px;">!! श्री गणेशाय नमः !! </div><br>
+        <div class="hero">
+        <img src="ganpati4.jpg" style="width: 120px;"></div>
+        <p style="letter-spacing: 0.3px;color: var(--gold); font-size: 0.9rem; ">We cordially invite you to celebrate the wedding of</p>
+       <div style="color: var(--gold); font-family: 'Great Vibes', cursive; font-size: 2.7rem; margin-top: 10px;"><b style="margin: 0;font-family: 'Cinzel', serif;color: var(--gold); margin-top: 10px;">S</b>uryakant  &nbsp;&&nbsp; <b style="margin: 0;font-family: 'Cinzel', serif;color: var(--gold); margin-top: 10px;">A</b>ishwarya </div><br><p style="letter-spacing: 0.1px;color: var(--gold); font-size: 0.7rem; ">Two hearts, one journey. Join us as we tie the knot!</p>
+        <button class="enter-btn" onclick="startApp()">OPEN WEDDING INVITATION</button>
+    </div>
+
+ <!--<div id="music-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+    <button onclick="toggleMusic()" id="musicBtn" style="background: var(--maroon); color: var(--gold); border: 2px solid var(--gold); border-radius: 50%; width: 50px; height: 50px; cursor: pointer; font-size: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+        🎵
+    </button>
+    <audio id="weddingSong" loop>
+        <source src="Vaa Kannamma.mp3" type="audio/mpeg">
+    </audio>
+</div> -->
+    <audio id="bgMusic" loop>
+        <source src="Vaa Kannamma.mp3" type="audio/mpeg">
+    </audio>
+ 
+    <div class="hero">
+        <img src="mailar mallana.jpeg" style="width: 85px; ">
+        <div style="color: var(--gold); margin-top: 10px; font-size: 1.1rem;">!! श्री मैलार मल्लन्ना प्रसन्न !!</div>
+        <h1><b style="margin: 0;font-family: 'Cinzel', serif;color: var(--gold); margin-top: 10px;">S</b>uryakant</h1><p style="letter-spacing: 0.3px;color: var(--gold); font-size: 0.7rem;">S/O Smt. Pushpa & Kashinath Shivappa Dubalgunde </p><br> <h1>& <br><b style="margin: 0;font-family: 'Cinzel', serif;color: var(--gold); margin-top: 10px;">A</b>ishwarya</h1><p style="letter-spacing: 0.3px;color: var(--gold); font-size: 0.7rem;">D/O Smt. Dyandevi & Mallikarjun Ganpati Gunjarge</p><br>
+        <p style="font-family: 'Cinzel', serif; letter-spacing: 3px;">28th April 2026 @ 12:24 PM</p>
+    </div>
+ 
+    <div class="card" id="card-location1">
+        <div id="card-location">
+        <h2 style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--maroon);background-color: white">Counting Down to Forever ...</h2>
+        <p>We invite you to celebrate the union of our souls and the beginning of our new journey together.</p>
+        </div>
+        <div id="countdown-container">
+             
+            <div class="time-box"><span id="days">00</span><div class="label">Days</div></div>
+            <div class="time-box"><span id="hours">00</span><div class="label">Hrs</div></div>
+            <div class="time-box"><span id="mins">00</span><div class="label">Mins</div></div>
+            <div class="time-box"><span id="secs">00</span><div class="label">Secs</div></div>
+        </div>
+  <hr style="border: 0; border-top: 1px solid var(--gold); margin: 30px 0;">
+     
+     <div class="section" id="wedding-location" style="background-color: white">
+        <h2 style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--maroon);">Wedding Location</h2>Asture Kalyan Mantapa, Lecture Colony, Bhalki, Karnataka 585328 <br><br>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d733.9968222026105!2d77.21951844951668!3d18.042662561642818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcee04a33d3634d%3A0x965bed7a337bae00!2sAsture%20Kalyan%20Mantapa!5e0!3m2!1sen!2sus!4v1773342885580!5m2!1sen!2sus" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+       <hr style="border: 0; border-top: 1px solid var(--gold); margin: 30px 0;">
+        <br><br>Your presence is the greatest gift of all. Please let us know if you can make it.
+        <a href="https://wa.me/918356901360?text=Hii! We are Attending The Wedding!" class="btn" target="_blank" rel="noopener noreferrer">RSVP ON WHATSAPP</a>
+    </div>
+
+    <div class="upload-section" id="upload-location">
+            <h4 style="margin: 0; color: var(--maroon);">Share Your Blessings</h4>
+            <p style="font-size: 0.85rem;">Uploaded photos will be added to our wedding album!</p>
+            <a href="https://drive.google.com/drive/folders/1X58ytkAmza1EQ2BRqbOzwpM1vp7TqtVM" style="color: var(--maroon); font-weight: bold; text-decoration: underline;" target="_blank" rel="noopener noreferrer">📸 Upload Photos & Videos</a>
+        </div>
+</div>
+    <footer style="padding: 30px; opacity: 0.9; font-size: 0.8rem;">
+        With 💕 Dubalgunde & Gunjarge Families
+    </footer>
+ 
+    <script>
+        function startApp() {
+            document.getElementById("bgMusic").play();
+            document.getElementById("overlay").style.opacity = "0";
+            setTimeout(() => { document.getElementById("overlay").style.display = "none"; }, 800);
+        }
+
+        function toggleMusic() {
+        var audio = document.getElementById("weddingSong");
+        var btn = document.getElementById("musicBtn");
+        if (audio.paused) {
+            audio.play();
+            btn.innerHTML = "⏸️"; // Change icon to Pause
+            btn.style.animation = "pulse 2s infinite";
+        } else {
+            audio.pause();
+            btn.innerHTML = "🎵"; // Change icon back to Play
+            btn.style.animation = "none";
+        }
+    }
+ 
+        // Set wedding date: April 28, 2026 23:59:59
+        const weddingDate = new Date("April 28, 2026 20:30:00").getTime();
+ 
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+ 
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+ 
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("mins").innerText = minutes;
+            document.getElementById("secs").innerText = seconds;
+ 
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("card-location1").style.height = "296px";
+                document.getElementById("card-location").innerHTML="";
+                document.getElementById("countdown-container").innerHTML = "<center><h3>💖 Happily Married! 💖<br><br>🎉 Thank you for Celebrating with us! 🎉 <br><br>💐 Your Presence made our Wedding truly Blessed and Memorable! 💐</h3></center>";
+                document.getElementById("countdown-container").style.padding = "30px 20px";
+                document.getElementById("wedding-location").innerHTML ="";
+               // document.getElementById("wedding-location").innerHTML = "<h3>Thank you for Celebrating with us!</h3>";
+               // document.getElementById("wedding-location").style.padding = "30px 20px";
+                document.getElementById("wedding-location").style.backgroundColor = "#FFF8E7"
+                   document.getElementById("upload-location").style.border = "0px"
+               document.getElementById("upload-location").style.backgroundColor = "#FFF8E7"
+                document.getElementById("upload-location").innerHTML = "";
+                //document.getElementById("upload-location").innerHTML = "<h3>Your Presence made our Wedding truly Blessed and Memorable!</h3>";              
+               // document.getElementById("upload-location").style.padding = "30px 20px";
+            
+            } 
+        }, 1000);
+    </script>
+</body>
+</html>

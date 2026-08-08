@@ -1,0 +1,6 @@
+{
+  "name": "Indian Engagement Invitation",
+  "description": "A minimalist modern Indian engagement invitation for Akash & Sayli featuring live countdown timer, interactive photo gallery, Google Map venue location, and ambient devotional music.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
