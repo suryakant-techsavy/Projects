@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalakruti By Aishwarya</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #fff8f3;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+   
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #d35400;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #ffe5d0, #ffd6e7);
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 52px;
+      color: #c0392b;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      margin: 10px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #d35400;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #a84300;
+    }
+
+    .btn-secondary {
+      border: 2px solid #d35400;
+      color: #d35400;
+    }
+
+    .btn-secondary:hover {
+      background: #ffe5d0;
+    }
+
+    section {
+      padding: 80px 50px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 40px;
+      color: #d35400;
+      margin-bottom: 50px;
+    }
+
+    .about-container {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .about-container img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .gallery-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+	  transition: opacity 1s ease;
+    }
+
+    .gallery-card h3 {
+      padding: 20px;
+      text-align: center;
+      color: #d35400;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .service-box {
+      background: #fff0e6;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .service-box:hover {
+      transform: scale(1.05);
+    }
+
+    .service-box h3 {
+      color: #d35400;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .testimonial {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .testimonial h4 {
+      color: #d35400;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .contact-card {
+      background: #fff0e6;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-card h3 {
+      margin-bottom: 15px;
+      color: #d35400;
+    }
+	
+	.contact-card a {
+  text-decoration: none;
+  
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-card a:hover {
+  color: #a84300;
+}
+
+    footer {
+      background: #d35400;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer p {
+      margin-top: 10px;
+    }
+
+    @media(max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+
+      nav {
+        margin-top: 15px;
+      }
+
+      .hero h2 {
+        font-size: 38px;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+    }
+	.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#Brand-img {
+  height: 70px;
+  width: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+#Brand-img:hover {
+  transform: scale(1.08);
+}
+
+header h1 {
+  color: #d35400;
+  font-size: 24px;
+}
+.contact-card a {
+  text-decoration: none;
+  color: black;
+  font-weight: normal;
+}
+
+.contact-card a:hover {
+  color: #333;
+}
+.gallery-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+#rangoli-slider {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: opacity 1s ease;
+}
+
+  </style>
+</head>
+
+<body>
+
+
+  <header>
+
+  <div class="logo-container">
+    <img src="Kalakruti By Aishwarya.jpeg" 
+         alt="Brand_img" 
+         id="Brand-img">
+
+    <h1>Kalakruti By Aishwarya</h1>
+  </div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+</header>
+
+  <section class="hero" id="home">
+    <h2>Bringing Indian Tradition to Life Through Art & Creativity</h2>
+
+    <p>
+      Rangoli • Mehendi • Drawing & Painting Artwork • Decorations
+    </p>
+
+    <p>
+      Elegant traditional artwork crafted with passion, culture and creativity.
+    </p>
+
+    <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+    <a href="#contact" class="btn btn-secondary">Book a Service</a>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Aishwarya</h2>
+
+    <div class="about-container">
+      <img
+        src="Aish_img1.JPG"
+        alt="Artist"
+      />
+
+      <div class="about-text">
+        <p>
+          She is a passionate traditional artist specializing in Rangoli design,
+          Mehendi art, Drawing & Painting and Decoration for special moments.
+        </p>
+
+        <br>
+
+        <p>
+          Her artistic journey started through festivals, weddings and family
+          celebrations where she discovered her love for Indian traditional art.
+        </p>
+
+        <br>
+
+        <p>
+          Her mission is to preserve traditional Indian art forms while blending
+          them with modern elegance and creativity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2 class="section-title">Portfolio Gallery</h2>
+
+   <div class="gallery">
+
+  <div class="gallery-card">
+    <img id="rangoli-slider" src="Media/Img/Rangoli/1.jpeg" alt="Rangoli">
+    <h3>Rangoli</h3>
+  </div>
+
+  <div class="gallery-card">
+    <img id="mehendi-slider" src="Media/Img/Mehndi/1.jpeg" alt="Mehndi">
+    <h3>Mehendi</h3>
+  </div>
+
+  <div class="gallery-card">
+    <img id="drawing-slider" src="Media/Img/Drawing/1.jpeg" alt="Drawing">
+    <h3>Drawing & Painting</h3>
+  </div>
+
+  <div class="gallery-card">
+    <img id="decorations-slider" src="Media/Img/Decorations/1.jpeg" alt="Decorations">
+    <h3>Decorations</h3>
+  </div>
+
+</div>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">Services Offered</h2>
+
+    <div class="services">
+      <div class="service-box">
+        <h3>Mehendi</h3>
+      </div>
+
+      <div class="service-box">
+        <h3>Rangoli</h3>
+      </div>
+
+
+      <div class="service-box">
+        <h3>Drawing and Painting Artwork</h3>
+      </div>
+
+      <div class="service-box">
+        <h3>Creative Decorations</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2 class="section-title">Client Testimonials</h2>
+
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>
+          “Her rangoli designs became the highlight of our Diwali celebration.”
+        </p>
+        <h4>- Priya S.</h4>
+      </div>
+
+      <div class="testimonial">
+        <p>
+          “Beautiful mehendi artwork with elegant detailing and creativity.”
+        </p>
+        <h4>- Neha R.</h4>
+      </div>
+
+      <div class="testimonial">
+        <p>
+          “Amazing decorations that added beauty to our family event.”
+        </p>
+        <h4>- Aman K.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+            
+    <h2 class="section-title">Let’s Create Something Beautiful Together</h2>
+	<center><p className="text-gray-700 mb-10 leading-relaxed">
+            Whether you are looking for mehendi, rangoli,
+           Drawings and Painting Artwork or customized creative artistic Decorations, I would love to
+            connect with you.
+          </p></center><br>
+
+    <div class="contact-box">
+      <div class="contact-card">
+        <h3>Location</h3>
+        <p>&#127968; Bengaluru, Karnataka, India</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Contact</h3>
+        <p> &#128241; +91 90042 87740</p>
+        <p> 📧 aishugunjurge@gmail.com</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Social Media</h3>
+        <p><a href="https://www.linkedin.com/in/aishwarya-gunjurge-83484b409" target="_blank">&#128279;LinkedIn</a> </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <h2>Kalakruti By Aishwarya</h2>
+
+    <p>
+      Traditional Art • Creativity • Culture • Celebration
+    </p>
+
+    <p>
+      © 2026 Kalakruti By Aishwarya. All Rights Reserved.
+    </p>
+  </footer>
+<script src="js/rangoli-images.js"></script>
+
+<script>
+const navLinks = document.querySelectorAll('nav a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+
+    targetSection.scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+function startSlider(elementId, images, interval = 3000){
+
+    let index = 0;
+
+    const img = document.getElementById(elementId);
+
+    if(!img || images.length === 0){
+        return;
+    }
+
+    setInterval(() => {
+
+        img.style.opacity = "0";
+
+        setTimeout(() => {
+
+            index = (index + 1) % images.length;
+
+            img.src = images[index];
+
+            img.style.opacity = "1";
+
+        }, 500);
+
+    }, interval);
+}
+
+startSlider("rangoli-slider", rangoliImages, 3000);
+startSlider("mehendi-slider", mehendiImages, 3500);
+startSlider("drawing-slider", drawingImages, 4000);
+startSlider("decorations-slider", decorationImages, 4500);
+
+</script>
+
+
+</body>
+</html>
