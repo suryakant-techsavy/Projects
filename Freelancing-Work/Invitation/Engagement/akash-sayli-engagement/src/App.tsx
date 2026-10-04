@@ -16,7 +16,7 @@ export default function App() {
   // Couple Details with LocalStorage persistence
   const [details, setDetails] = useState<CoupleDetails>(() => {
     try {
-      const saved = localStorage.getItem('engagement_details_v12');
+      const saved = localStorage.getItem('engagement_details_v13');
       if (saved) {
         const parsed = JSON.parse(saved);
         return {
@@ -53,7 +53,7 @@ export default function App() {
   // Save to LocalStorage when states update
   useEffect(() => {
     try {
-      localStorage.setItem('engagement_details_v12', JSON.stringify(details));
+      localStorage.setItem('engagement_details_v13', JSON.stringify(details));
     } catch (e) {
       console.error(e);
     }
